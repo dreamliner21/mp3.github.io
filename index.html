@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auto Play Sound</title>
+</head>
+<body>
+  <audio id="hidden-audio" autoplay muted loop>
+    <source src="sound.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    var audio = document.getElementById("hidden-audio");
+    var duration = 5000; // 5000 milidetik = 5 detik
+
+    // Fungsi untuk memulai suara (autoplay)
+    function startSound() {
+      audio.play();
+      setTimeout(pauseSound, duration);
+    }
+
+    // Fungsi untuk menghentikan suara
+    function pauseSound() {
+      audio.pause();
+    }
+
+    // Panggil fungsi saat halaman dimuat
+    window.addEventListener("load", startSound);
+  </script>
+</body>
+</html>
