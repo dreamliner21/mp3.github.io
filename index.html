@@ -11,13 +11,7 @@
 
   <script>
     var audio = document.getElementById("hidden-audio");
-    var duration = 5000; // 5000 milidetik = 5 detik
-
-    // Fungsi untuk memulai suara (autoplay)
-    function startSound() {
-      audio.play();
-      setTimeout(pauseSound, duration);
-    }
+    var duration = 1000; // 1000 milidetik = 1 detik
 
     // Fungsi untuk menghentikan suara
     function pauseSound() {
@@ -25,7 +19,9 @@
     }
 
     // Panggil fungsi saat halaman dimuat
-    window.addEventListener("load", startSound);
+    window.addEventListener("load", function() {
+      setTimeout(pauseSound, duration);
+    });
   </script>
 </body>
 </html>
